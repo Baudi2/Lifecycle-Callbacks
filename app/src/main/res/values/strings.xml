@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ActivityAndFragmentLifeCallbacks</string>
+    <string name="navigate">Navigate</string>
 </resources>
