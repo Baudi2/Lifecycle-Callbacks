@@ -2,7 +2,10 @@
 <androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_for_fragments"
+    android:name="androidx.navigation.fragment.NavHostFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/fragment_container_view_tag"
-    tools:context=".MainActivity"/>
+    app:defaultNavHost="true"
+    app:navGraph="@navigation/nav_graph"
+    tools:context=".MainActivity" />
