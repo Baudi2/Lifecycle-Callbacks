@@ -1,61 +1,59 @@
 package ru.startandroid.develop.activityandfragmentlifecallbacks
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
-import androidx.fragment.app.commit
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (savedInstanceState == null) {
-            supportFragmentManager.commit {
-                setReorderingAllowed(true)
-                add(R.id.fragment_container_view_tag, JustFragment())
-            }
-        }
-        Log.d("MY_LOG", "onCreate - ACTIVITY")
+        Log.i("MY_LOG", "onCreate - ACTIVITY")
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragment_container_view_tag) as NavHostFragment
+        navHostFragment.findNavController()
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d("MY_LOG", "onStart - ACTIVITY")
+        Log.i("MY_LOG", "onStart - ACTIVITY")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("MY_LOG", "onResume - ACTIVITY")
+        Log.i("MY_LOG", "onResume - ACTIVITY")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.d("MY_LOG", "onRestart - ACTIVITY")
+        Log.i("MY_LOG", "onRestart - ACTIVITY")
     }
 
     override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
         super.onSaveInstanceState(outState, outPersistentState)
-        Log.d("MY_LOG", "onSaveInstanceState - ACTIVITY")
+        Log.i("MY_LOG", "onSaveInstanceState - ACTIVITY")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        Log.d("MY_LOG", "onRestoreInstanceState - ACTIVITY")
+        Log.i("MY_LOG", "onRestoreInstanceState - ACTIVITY")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("MY_LOG", "onPause - ACTIVITY")
+        Log.i("MY_LOG", "onPause - ACTIVITY")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("MY_LOG", "onStop - ACTIVITY")
+        Log.i("MY_LOG", "onStop - ACTIVITY")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("MY_LOG", "onDestroy - ACTIVITY")
+        Log.i("MY_LOG", "onDestroy - ACTIVITY")
     }
 }
